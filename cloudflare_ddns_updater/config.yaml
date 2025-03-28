@@ -1,0 +1,21 @@
+name: "Cloudflare DDNS Updater"
+description: "Cloudflare DDNS Updater"
+version: "1.0.2"
+slug: "cloudflare_ddns_updater"
+init: false
+arch:
+  - aarch64
+  - amd64
+  - armhf
+  - armv7
+  - i386
+startup: services
+
+options:
+  config: []
+
+schema:
+  config:
+    - zone: str
+      token: str
+      domains: str
