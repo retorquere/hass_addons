@@ -3,6 +3,7 @@
 This addon is used to update a DDNS record on Cloudflare.
 
 ## Requirements
+* A Cloudflare account
 * A domain name setup to use Cloudflare as the DNS provider
 
 ## Configuration
