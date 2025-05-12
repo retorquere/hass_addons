@@ -1,6 +1,6 @@
 name: "Cloudflare DDNS Updater"
 description: "Cloudflare DDNS Updater"
-version: "1.0.3"
+version: "1.0.4"
 slug: "cloudflare_ddns_updater"
 init: false
 arch:
