@@ -2,7 +2,7 @@ ARG BUILD_FROM
 FROM $BUILD_FROM
 
 # Install ddclient
-RUN apk add ddclient
+RUN apk add ddclient && apk add jq
 
 # Copy data for add-on
 COPY run.sh /

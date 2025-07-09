@@ -2,15 +2,26 @@
 
 CONFIG="/etc/ddclient/ddclient.conf"
 
-# Get the entire free-form content of the 'config' option.
-# This will now contain the full ddclient.conf text.
 DDCLIENT_FULL_CONFIG_CONTENT=$(bashio::config 'config')
+
+DAEMON=$(bashio::config 'daemon')
+TIMEOUT=$(bashio::config 'timeout')
+SYSLOG=$(bashio::config 'syslog')
+USE=$(bashio::config 'use')
+PROTOCOL=$(bashio::config 'protocol')
+LOGIN=$(bashio::config 'login')
+PASSWORD=$(bashio::config 'password')
+DOMAINS=$(bashio::config 'domains)
 
 # Create the directory for ddclient config if it doesn't exist
 mkdir -p "$(dirname "$CONFIG")"
 
-# Write the content directly to the ddclient.conf file
-echo "${DDCLIENT_FULL_CONFIG_CONTENT}" > "$CONFIG"
+echo "deamon=${DAEMON}" > "$CONFIG"
+echo "timeout=${TIMEOUT}" >> "$CONFIG"
+echo "syslog=${SYSLOG}" >> "$CONFIG"
+echo "pid=/run/ddclient/ddclient.pid" >> "$CONFIG"
+echo "use=${USE}" >> "$CONFIG"
+echo "protocol=${PROTOCOL}, login=${LOGIN}, password=${PASSWORD} ${DOMAINS}" >> "$CONFIG"
 
 # Set secure permissions for the config file
 chmod 600 "$CONFIG"
