@@ -1,6 +1,6 @@
 name: "DDNS Updater"
 description: "DDNS Updater"
-version: "1.0.5"
+version: "1.0.6"
 slug: "ddns_updater"
 init: false
 arch:
@@ -11,12 +11,12 @@ arch:
   - i386
 startup: services
 
-#options:
-#  config: |
-#    # Global ddclient settings
-#    daemon=300
-#    timeout=10
-#    syslog=yes
+options:
+  config: |
+    # Global ddclient settings
+    daemon=300
+    timeout=10
+    syslog=yes
 #
 #    # Get IPv6 address specifically from the Home Assistant device's own interface (e.g., eth0)
 #    # REPLACE <your_interface_name>
@@ -33,13 +33,8 @@ startup: services
 #    zone=<your_cloudflare_zone_name>
 #    proxied=no
 #
-#schema:
-#  config:
+schema:
+  config: str
 #    type: str
 #    multiline: true
 #    description: "Enter the full content of your ddclient.conf here. This will be used by the add-on."
-
-options:
-  message: "Hello world..."
-schema:
-  message: "str?"
