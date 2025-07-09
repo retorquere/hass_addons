@@ -1,6 +1,6 @@
 name: "DDNS Updater"
 description: "DDNS Updater"
-version: "1.0.6"
+version: "1.0.7"
 slug: "ddns_updater"
 init: false
 arch:
@@ -34,7 +34,7 @@ options:
 #    proxied=no
 #
 schema:
-  config: str
-#    type: str
-#    multiline: true
-#    description: "Enter the full content of your ddclient.conf here. This will be used by the add-on."
+  config:
+    type: str
+    multiline: true
+    description: "Enter the full content of your ddclient.conf here. This will be used by the add-on."
