@@ -38,3 +38,8 @@ startup: services
 #    type: str
 #    multiline: true
 #    description: "Enter the full content of your ddclient.conf here. This will be used by the add-on."
+
+options:
+  message: "Hello world..."
+schema:
+  message: "str?"
