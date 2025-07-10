@@ -5,7 +5,7 @@ FROM $BUILD_FROM
 RUN apk add ddclient && apk add python
 
 COPY requirements.txt /
-COPY makeconf.py /
+COPY makeconfig.py /
 COPY run.sh /
 
 RUN pip install --no-cache-dir -r requirements.txt
