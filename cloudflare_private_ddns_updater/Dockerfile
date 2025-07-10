@@ -1,7 +1,6 @@
 ARG BUILD_FROM
 FROM $BUILD_FROM
 
-COPY requirements.txt /
 COPY makeconfig.py /
 COPY run.sh /
 
