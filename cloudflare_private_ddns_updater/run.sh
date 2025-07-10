@@ -35,5 +35,6 @@ EOL
 done
 
 # Start ddclient
+cat "$CONFIG"
 ddclient -foreground -verbose -debug
 
