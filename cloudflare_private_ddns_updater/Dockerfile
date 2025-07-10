@@ -2,7 +2,7 @@ ARG BUILD_FROM
 FROM $BUILD_FROM
 
 # Install ddclient
-RUN apk add ddclient
+RUN apk add ddclient && apk add python
 
 COPY requirements.txt /
 COPY makeconf.py /
