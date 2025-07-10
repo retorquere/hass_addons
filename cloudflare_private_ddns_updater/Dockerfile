@@ -9,9 +9,7 @@ RUN apk add ddclient
 
 ENV PYTHONUNBUFFERED=1
 RUN apk add --update --no-cache python3
-RUN python3 -m ensurepip
-RUN pip3 install --no-cache --upgrade pip setuptools
-RUN pip install --no-cache-dir -r requirements.txt
+RUN apk add --update --no-cache py3-netifaces
 
 RUN chmod a+x /run.sh
 CMD [ "/run.sh" ]
