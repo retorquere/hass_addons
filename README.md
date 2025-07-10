@@ -12,4 +12,4 @@ This repository contains a collection of custom Home Assistant addons that I hav
 
 ## Addons
 
-* [DDNS Updater](ddns_updater/DOCS.md) - Automatically updates one or more DDNS records with your public IP address.
+* [Cloudflare Private DDNS Updater](cloudflare_private_ddns_updater/DOCS.md) - Automatically updates one or more DDNS records with your private IP address.
