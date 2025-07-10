@@ -5,7 +5,12 @@ This addon is used to update a DDNS record using ddclient
 ## Configuration
 
 ```yaml
-config: |
-  your ddclient.conf
+config:
+  - zone: example.com
+    token: <token from cloudflare>
+    domains: my.example.com,www.example.com
+  - zone: acme.com
+    token: <token from cloudflare>
+    domains: my.acme.com,www.acme.com
 ```
 

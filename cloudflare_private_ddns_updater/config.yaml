@@ -1,6 +1,6 @@
 name: Cloudflare Private DDNS Updater
 description: Cloudflare Private DDNS Updater
-version: 1.0.21
+version: 1.0.22
 slug: cloudflare_private_ddns_updater
 init: false
 arch:
