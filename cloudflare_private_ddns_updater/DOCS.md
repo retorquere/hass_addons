@@ -1,7 +1,8 @@
 ## DDNS Updater
 
-This addon is used to update a DDNS record using ddclient. You can use this to set up SSL inside your home network:
+This addon is used to update a DDNS record pointing inside your home network. You can use this to set up SSL inside your home network:
 
+* Make sure your modem does not expose your internal IPv6 addresses. They will be routable but should be blocked by the firewall of your router.
 * Add an AAAA record in your cloudflare DNS config (ag `hass.your.domain`). **DO NOT** enter an A record for this hostname. Set it to non-proxied.
 * Install this add-on and configure it (see below).
 * Set up letsencrypt for cloudflare
