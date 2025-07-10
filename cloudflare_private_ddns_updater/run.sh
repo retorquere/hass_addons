@@ -2,13 +2,11 @@
 
 CONFIG="/etc/ddclient/ddclient.conf"
 
-XFACE=$(bashio::config 'interface')
-
 cat > "$CONFIG" << EOL
 daemon=300
 syslog=yes
 pid=/run/ddclient/ddclient.pid
-use=cmd, cmd='ip -6 addr show ${XFACE} | grep "scope global" | awk "{print \$2}" | head -n 1 | cut -d/ -f1'
+use=cmd, cmd='ip -6 addr show scope global | sed -n "/inet6 [23]/ { s/.*inet6 \([^ ]*\)\/.*/\1/p; q }" '
 EOL
 
 DDCLIENT_CONFIG=$(bashio::config 'config')
