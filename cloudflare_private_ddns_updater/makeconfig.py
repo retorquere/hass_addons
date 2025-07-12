@@ -60,7 +60,6 @@ with open('/etc/ddclient/ddclient.conf', 'w') as f:
     f.write('ttl=1\n')
     f.write('login=token\n')
     f.write(f'password={config.token}\n')
-    f.write('use=static\n')
     f.write(f'ip={ipv4}\n' if ipv4 else 'usev4=no\n')
     f.write(f'ip6={ipv6}\n' if ipv6 else 'usev6=no\n')
     f.write(f'{config.domains}\n')
