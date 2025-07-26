@@ -55,11 +55,12 @@ with open('/etc/ddclient/ddclient.conf', 'w') as f:
   f.write('pid=/run/ddclient/ddclient.pid\n')
 
   for config in json.load(open('/data/options.json'), object_hook=lambda x: SimpleNamespace(**x)).config:
-    f.write('\nprotocol=cloudflare\n')
-    f.write(f'zone={config.zone}\n')
-    f.write('ttl=1\n')
-    f.write('login=token\n')
-    f.write(f'password={config.token}\n')
-    f.write(f'ip={ipv4}\n' if ipv4 else 'usev4=no\n')
-    f.write(f'ip6={ipv6}\n' if ipv6 else 'usev6=no\n')
-    f.write(f'{config.domains}\n')
+    for v, ip in [('', ipv4), ('v6', ipv6)]:
+      if ip:
+        f.write('\nprotocol=cloudflare\n')
+        f.write(f'zone={config.zone}\n')
+        f.write('ttl=1\n')
+        f.write('login=token\n')
+        f.write(f'password={config.token}\n')
+        f.write(f'use{v}=ip, ip={ip}\n')
+        f.write(f'{config.domains}\n\n')
