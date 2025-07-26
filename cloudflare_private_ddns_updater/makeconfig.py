@@ -62,5 +62,5 @@ with open('/etc/ddclient/ddclient.conf', 'w') as f:
         f.write('ttl=1\n')
         f.write('login=token\n')
         f.write(f'password={config.token}\n')
-        f.write(f'use{v}=ip, ip={ip}\n')
+        f.write(f'use{v}=ip{v}, ip{v}={ip}\n')
         f.write(f'{config.domains}\n\n')
