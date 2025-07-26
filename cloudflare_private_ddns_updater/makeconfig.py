@@ -24,7 +24,7 @@ def get_ips():
         if not ip_str: continue
 
         if not ip_str.startswith('127.') and ip_str != '0.0.0.0':
-          ipv4 = f'ip, ip={ip_str}'
+          ipv4 = f'ipv4, ipv4={ip_str}'
           break
 
     if not ipv6 and netifaces.AF_INET6 in addresses:
